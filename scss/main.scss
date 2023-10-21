@@ -1,0 +1,592 @@
+@use './colors' as *;
+@use './animations' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #fff;
+	font-family: 'DM Sans', sans-serif;
+}
+
+html {
+	scroll-padding-top: 74px;
+}
+.navbar {
+	z-index: 4;
+}
+
+.blue-text {
+	color: $main-color;
+	font-weight: bold;
+}
+
+.section-title {
+	text-align: center;
+	text-transform: uppercase;
+}
+.underline {
+	height: 5px;
+	width: 50px;
+	background-color: $main-color;
+	margin: 0 auto 40px;
+}
+
+nav {
+	transition: 0.6s;
+	text-transform: uppercase;
+
+	.navbar-toggler {
+		padding: 10px 15px;
+	}
+
+	.navbar-brand {
+		font-weight: bold;
+	}
+
+	.nav-link,
+	.navbar-nav .nav-link.active,
+	.navbar-nav .show > .nav-link,
+	.navbar-brand,
+	.fa-bars {
+		color: rgb(255, 255, 255);
+	}
+
+	.navbar-brand {
+		transition: 0.3s;
+	}
+	.navbar-brand:hover {
+		color: $main-color;
+	}
+
+	.nav-link:focus,
+	.nav-link:hover,
+	.navbar-nav .nav-link.active,
+	.navbar-nav .show > .nav-link {
+		color: $main-color;
+	}
+}
+
+.aboutus {
+	i {
+		margin-top: 20px;
+		font-size: 30px;
+	}
+
+	.aboutus-card-title {
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+
+	.aboutus-card-text {
+		font-size: 14px;
+	}
+}
+.aboutus-hover {
+	transition: 0.3s;
+}
+.aboutus-hover:hover {
+	color: $main-color;
+}
+
+header.hero-img {
+	position: relative;
+	height: 100vh;
+	background-image: url('../img/zdjecie-header-1.jpg');
+	background-size: cover;
+	background-position: center;
+	color: $white;
+	background-attachment: fixed;
+	z-index: 0;
+
+	h1 {
+		text-transform: uppercase;
+	}
+
+	.hero-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0, 0, 0, 0.8);
+		z-index: -5;
+	}
+	.hero-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		flex-direction: column;
+	}
+
+	.fa-chevron-down {
+		position: absolute;
+		transform: translateX(-50%);
+		bottom: 20px;
+		font-size: 30px;
+		color: $white;
+		left: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	.hero-text {
+		h1 {
+			font-size: 42px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+	}
+}
+
+.shadow-bg {
+	background-color: rgba(0, 0, 0, 0.8);
+	transition: 0.6s;
+}
+
+.team {
+	position: relative;
+	background-image: url('../img/basketball-8030918_1920.png');
+	background-size: cover;
+	background-position: left;
+	background-attachment: fixed;
+	z-index: 0;
+	h2 {
+		color: $white;
+	}
+
+	.team-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -5;
+	}
+
+	.card {
+		transition: scale 0.3s;
+		img {
+			height: 300px;
+			object-fit: cover;
+		}
+
+		i {
+			padding: 10px;
+		}
+	}
+	.card:hover {
+		scale: 0.95;
+	}
+}
+
+@media (mid-width: 992px) {
+	html {
+		scroll-padding-top: 72px;
+	}
+}
+
+.fa-check {
+	color: green;
+	padding: 10px;
+}
+.fa-xmark {
+	color: red;
+	padding: 10px;
+}
+
+.price-title {
+	font-weight: 600;
+	text-align: center;
+	color: $main-color;
+	font-size: 23px;
+}
+
+.price-box {
+	padding: 30px;
+	margin: 20px;
+	// box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.4);
+	border: solid rgba(99, 97, 97, 0.2) 0.5px;
+
+	transition: 0.3s;
+}
+
+.price-tag {
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+	letter-spacing: 1px;
+}
+
+p {
+	span {
+		font-weight: bold;
+	}
+}
+
+.price-box:hover {
+	scale: 1.05;
+}
+.price-info {
+	margin-top: 30px;
+}
+.achievements-list {
+	display: flex;
+
+	i {
+		padding: 10px;
+		font-size: 48px;
+	}
+}
+
+.fa-solid {
+	transition: 0.3s;
+}
+.fa-solid:hover {
+	color: $main-color;
+}
+
+.btn-4 {
+	background-color: $purple;
+	border: none;
+}
+
+.btn-2 {
+	background-color: $pink;
+	border: none;
+}
+
+.btn-secondary {
+	transition: 0.3s;
+	padding: 10px 10px;
+}
+
+.btn-secondary:hover {
+	background-color: #5025d1;
+	color: $white;
+	scale: 1.05;
+}
+.btn-rabat {
+	background-color: #ebe4ff;
+	border: none;
+	border-radius: 14px;
+	font-size: 14px;
+	color: $purple;
+	font-weight: bold;
+	width: 90px;
+	height: 30px;
+	position: relative;
+	text-align: center;
+}
+.del {
+	padding-bottom: 10px;
+}
+
+.price-box {
+	.prz,
+	.text-3,
+	.price-title,
+	.price-tag {
+		text-align: center;
+	}
+}
+
+.prz {
+	font-size: 14px;
+	padding: 0;
+}
+
+.text-3 {
+	color: #673de6;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.prices {
+	p {
+		span {
+			font-size: 16px;
+			font-weight: normal;
+		}
+	}
+}
+
+.btn-4 {
+	padding: 12px 16px 10px;
+	width: 280px;
+}
+
+.price-tag {
+	color: $font-2;
+	font-size: 50px;
+}
+
+.price-title {
+	color: $purple-2;
+}
+
+.text-4 {
+	padding-top: 15px;
+}
+
+.fiofiu {
+	left: 0;
+}
+
+.info {
+	font-size: 18px;
+	padding: 10px;
+	color: black;
+	font-weight: bold;
+}
+.btn-5 {
+	background-color: $pink;
+	padding: 12px 16px 10px;
+	width: 280px;
+	border: none;
+	transition: 0.3s;
+}
+
+.btn-5:hover {
+	background-color: #fd3773;
+	z-index: 1;
+}
+
+.btn-popular {
+	position: relative;
+	left: 49%;
+	transform: translateX(-50%);
+	top: 20px;
+	background-color: $pink;
+	color: $white;
+	border: none;
+	width: 250px;
+	height: 40px;
+	border-radius: 14px;
+	z-index: 1;
+}
+
+.fa-sort-down {
+	position: relative;
+	left: 51%;
+	transform: translateX(-50%);
+	top: 40px;
+	color: $pink;
+}
+.fa-sort-down:hover {
+	color: $pink;
+}
+
+.contact {
+	position: relative;
+
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: 0;
+	background-image: url('../img/natalcia2.jpg');
+	.section-title {
+		color: $white;
+	}
+	.underline {
+		background-color: $white;
+	}
+	.contact-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 9, 27, 0.85);
+		z-index: -5;
+	}
+	.contact-us {
+		color: $white;
+		display: flex;
+		align-items: center;
+
+		.social-media {
+			margin: 10px;
+		}
+
+		.contact-item {
+			.fab {
+				padding: 10px;
+				font-size: 20px;
+				transition: 0.3s;
+			}
+
+			.fab:hover {
+				color: $pink;
+				font-size: 30px;
+			}
+
+			h3 {
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+
+.middle-box {
+	position: relative;
+	bottom: 40px;
+}
+
+
+
+.btn0 {
+	margin-top: 60px;
+	font-size: 20px;
+	border: none;
+	border-radius: 14px;
+	background-color: $main-color;
+	color: white;
+	padding: 10px;
+	width: 230px;
+	transition: 0.3s;
+	box-shadow: 0 0 5px $main-color, 0 0 25px $main-color;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-decoration: none;
+
+	
+	
+}
+.btn0:hover {
+	scale: 1.05;
+	background-color: $main-color;
+
+	box-shadow: 0 0 5px $main-color, 0 0 25px $main-color, 0 0 50px $main-color, 0 0 100px $main-color,
+		0 0 200px $main-color;
+}
+
+.footer-parent {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+footer {
+	position: relative;
+	width: 100%;
+	background: #e52165;
+	min-height: 100px;
+	padding: 20px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	p {
+		color: #fff;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		font-size: 1.1em;
+	}
+	.social_icon,
+	.menu {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px 0;
+		flex-wrap: wrap;
+		li {
+			list-style: none;
+			a {
+				font-size: 2em;
+				color: #fff;
+				margin: 0 10px;
+				display: inline-block;
+				transition: 0.5s;
+			}
+			a:hover {
+				transform: translateY(-10px);
+			}
+		}
+	}
+	.menu {
+		li {
+			a {
+				font-size: 1.2em;
+				text-decoration: none;
+				opacity: 0.7;
+			}
+			a:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+footer {
+	.wave {
+		position: absolute;
+		top: -100px;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-image: url('../img/wave.png');
+		background-size: 1000px 100px;
+	}
+}
+
+footer .wave#wave1 {
+	z-index: 1000;
+	opacity: 1;
+	bottom: 0;
+	animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2 {
+	z-index: 999;
+	opacity: 0.5;
+	bottom: 10px;
+	animation: animateWave_02 4s linear infinite;
+}
+footer .wave#wave3 {
+	z-index: 1000;
+	opacity: 0.2;
+	bottom: 15px;
+	animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4 {
+	z-index: 999;
+	opacity: 0.7;
+	bottom: 20px;
+	animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+	0% {
+		background-position-x: 1000px;
+	}
+	100% {
+		background-position-x: 0px;
+	}
+}
+@keyframes animateWave_02 {
+	0% {
+		background-position-x: 0px;
+	}
+	100% {
+		background-position-x: 1000px;
+	}
+}
+
+.p-informacje{
+	text-align: center;
+	text-transform: uppercase;
+}
